@@ -42,12 +42,20 @@
 | **Consulta de preço** | Terminais nas lojas com leitor de código de barras, preço por loja e propagandas em tela cheia |
 | **Relatórios** | Vendas e faturamento por filial, supervisor e vendedor; relatório de metas; PIX |
 | **WhatsApp** | Conexão das contas e disparos automáticos de mensagens |
+| **PIX** *(em elaboração)* | Cobrança PIX com QR Code e relatório das vendas pagas por PIX |
+| **Hub de integração** *(em elaboração)* | Integração do Winthor com marketplaces e hubs de e-commerce |
 
 ---
 
 ## Telas
 
 > Capturas feitas em ambiente de homologação. Os dados de clientes e valores aparecem desfocados de propósito.
+
+### Acesso
+
+Login com o usuário e a senha do Winthor.
+
+![Login](telas/27-login.jpg)
 
 ### Painel inicial
 
@@ -89,12 +97,25 @@ Configuração por filial, situação do agendador, histórico, ajustes de estoq
   </tr>
 </table>
 
-### Etiquetas e consulta de preço
+### Etiquetas
+
+Modelos de etiqueta montados em editor visual e impressos em impressoras Zebra, com oferta De/Por.
+
+![Etiquetas](telas/20-etiquetas.jpg)
+
+### Consulta de preço nas lojas
+
+Um computador, TV ou tablet com leitor de código de barras vira terminal de consulta: abre um link próprio da loja,
+sem login, e mostra as propagandas da loja em tela cheia. Ao passar um produto no leitor, aparecem a foto e os preços
+para empresa (CNPJ) e para consumidor (CPF), e depois a tela volta às propagandas.
 
 <table>
   <tr>
-    <td width="50%"><b>Emissão de etiquetas de preço</b><br><img src="telas/20-etiquetas.jpg" alt="Etiquetas"></td>
-    <td width="50%"><b>Terminais de consulta de preço</b><br><img src="telas/22-terminais-consulta-preco.jpg" alt="Terminais de Consulta de Preço"></td>
+    <td width="50%"><b>Terminal aguardando leitura (propagandas)</b><br><img src="telas/29-terminal-consulta-preco.jpg" alt="Terminal de consulta de preço com propaganda"></td>
+    <td width="50%"><b>Produto consultado</b><br><img src="telas/30-terminal-consulta-preco-produto.jpg" alt="Terminal de consulta de preço com produto"></td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Gestão dos terminais e das propagandas</b>: cadastro por loja, link de acesso e envio das imagens<br><img src="telas/22-terminais-consulta-preco.jpg" alt="Terminais de Consulta de Preço"></td>
   </tr>
 </table>
 
@@ -145,6 +166,33 @@ Configuração por filial, situação do agendador, histórico, ajustes de estoq
     <td width="50%"><b>Disparos automáticos</b><br><img src="telas/26-whatsapp-disparos.jpg" alt="Disparos Automáticos"></td>
   </tr>
 </table>
+
+---
+
+## Em elaboração
+
+### PIX
+
+Cobrança PIX integrada ao banco (Santander), com os dados gravados no próprio banco do Winthor:
+
+- emissão do QR Code de cobrança pela tela;
+- confirmação do pagamento devolvida ao PDV;
+- relatório das vendas recebidas por PIX.
+
+As telas *Emitir PIX* e *Relatório PIX* já estão no menu e serão liberadas quando a integração estiver concluída.
+
+### Hub de integração com marketplaces
+
+Integração do Winthor com hubs e marketplaces de e-commerce, começando pela **Magis5**, configurada por filial dentro
+do WINAI:
+
+- envio de produtos, preços e estoque;
+- recebimento dos pedidos dos marketplaces no Winthor;
+- envio do XML da nota fiscal;
+- chaves de acesso guardadas criptografadas e histórico de cada sincronização.
+
+A comunicação com a Magis5 já foi validada de ponta a ponta. A tela de configuração está pronta e as rotinas de
+sincronização estão em desenvolvimento.
 
 ---
 
