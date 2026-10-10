@@ -42,7 +42,7 @@
 | **Consulta de preço** | Terminais nas lojas com leitor de código de barras, preço por loja e propagandas em tela cheia |
 | **Relatórios** | Vendas e faturamento por filial, supervisor e vendedor; relatório de metas; PIX |
 | **WhatsApp** | Conexão das contas e disparos automáticos de mensagens |
-| **PIX** *(em elaboração)* | Cobrança PIX com QR Code e relatório das vendas pagas por PIX |
+| **PIX** | Cobrança PIX com QR Code, baixa automática de títulos, devolução com aprovação e integração com o caixa |
 | **Hub de integração** *(em elaboração)* | Integração do Winthor com marketplaces e hubs de e-commerce |
 
 ---
@@ -167,19 +167,48 @@ para empresa (CNPJ) e para consumidor (CPF), e depois a tela volta às propagand
   </tr>
 </table>
 
+### PIX
+
+Cobrança PIX integrada ao banco (Santander; preparado para outros bancos), com os dados gravados no próprio banco do
+Winthor e o certificado digital que a filial já usa na nota fiscal. Validado com pagamento e devolução reais no banco.
+
+- **Configuração por filial**: banco, chave PIX e credenciais; o aviso de pagamento do banco (webhook) é cadastrado
+  sozinho, com um endereço próprio para cada filial.
+- **Emitir PIX**: QR Code para pedido do balcão, título a receber ou valor avulso; pago, o título é baixado no Winthor.
+- **Relatório PIX**: cobranças, recebimentos e devoluções, com exportação para o Excel; devolução só com aprovação de
+  um responsável, e o estorno da baixa do título quando a devolução é total.
+- **Caixa**: o frente de caixa do Winthor cobra PIX pelo WINAI, que confirma o pagamento e emite os comprovantes.
+- **Ajuda na tela**: o botão **?** de cada tela explica, em poucos passos, como a funcionalidade funciona.
+
+**Emitir PIX**: QR Code e copia-e-cola na hora; a tela confere o pagamento sozinha.
+
+![Emitir PIX](telas/32-emitir-pix.jpg)
+
+<table>
+  <tr>
+    <td width="50%"><b>Cobrança de título a receber</b>: busca pelo cliente ou pela duplicata<br><img src="telas/36-emitir-pix-titulo.jpg" alt="Emitir PIX de título"></td>
+    <td width="50%"><b>PIX recebido</b>: confirmado na tela; título pago é baixado no Winthor<br><img src="telas/37-emitir-pix-paga.jpg" alt="PIX pago"></td>
+  </tr>
+  <tr>
+    <td><b>Relatório PIX</b>: totais, devoluções aguardando aprovação e exportação<br><img src="telas/33-relatorio-pix.jpg" alt="Relatório PIX"></td>
+    <td><b>Detalhe da cobrança</b>: situação, devoluções e histórico<br><img src="telas/38-relatorio-pix-detalhe.jpg" alt="Detalhe da cobrança PIX"></td>
+  </tr>
+  <tr>
+    <td><b>Pedido de devolução</b>: vai ao banco só depois da aprovação<br><img src="telas/39-relatorio-pix-devolucao.jpg" alt="Pedir devolução do PIX"></td>
+    <td><b>Devolvida</b>: histórico com o pedido, a aprovação e a confirmação do banco<br><img src="telas/40-relatorio-pix-detalhe-devolvida.jpg" alt="Cobrança PIX devolvida"></td>
+  </tr>
+  <tr>
+    <td><b>Configuração PIX</b>: banco, chave, certificado e webhook por filial<br><img src="telas/31-configuracao-pix.jpg" alt="Configuração PIX"></td>
+    <td><b>PIX da filial</b>: credenciais, validade do QR, webhook e conta da baixa<br><img src="telas/35-configuracao-pix-filial.jpg" alt="Configuração PIX da filial"></td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Botão "?"</b>: explicação da tela em poucos passos<br><img src="telas/34-ajuda-pix.jpg" alt="Ajuda da Emissão de PIX"></td>
+  </tr>
+</table>
+
 ---
 
 ## Em elaboração
-
-### PIX
-
-Cobrança PIX integrada ao banco (Santander), com os dados gravados no próprio banco do Winthor:
-
-- emissão do QR Code de cobrança pela tela;
-- confirmação do pagamento devolvida ao PDV;
-- relatório das vendas recebidas por PIX.
-
-As telas *Emitir PIX* e *Relatório PIX* já estão no menu e serão liberadas quando a integração estiver concluída.
 
 ### Hub de integração com marketplaces
 
