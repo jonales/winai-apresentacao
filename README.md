@@ -43,6 +43,7 @@
 | **Relatórios** | Vendas e faturamento por filial, supervisor e vendedor; relatório de metas; PIX |
 | **WhatsApp** | Conexão das contas e disparos automáticos de mensagens |
 | **PIX** | Cobrança PIX com QR Code, baixa automática de títulos, devolução com aprovação e integração com o caixa |
+| **Integrações** | OTO CRM: envio diário das vendas e cadastros ao CRM, com histórico e recuperação de dias perdidos |
 | **Hub de integração** *(em elaboração)* | Integração do Winthor com marketplaces e hubs de e-commerce |
 
 ---
@@ -203,6 +204,27 @@ Winthor e o certificado digital que a filial já usa na nota fiscal. Validado co
   </tr>
   <tr>
     <td colspan="2"><b>Botão "?"</b>: explicação da tela em poucos passos<br><img src="telas/34-ajuda-pix.jpg" alt="Ajuda da Emissão de PIX"></td>
+  </tr>
+</table>
+
+### Integração OTO CRM
+
+Todo dia o WINAI manda ao OTO CRM as vendas do dia anterior das filiais ligadas, com os cadastros que elas usam
+(lojas, vendedores, produtos, clientes, pedidos e itens), substituindo os fluxos do n8n:
+
+- **Configuração na tela**: token guardado criptografado, janela do envio automático, filiais com o código da loja no
+  OTO e resumo no WhatsApp.
+- **Nada se perde**: cada dia e entidade fica no histórico com o retorno do OTO; o que falhou é tentado de novo e os
+  dias que ficaram para trás são recuperados.
+- **Dados completos**: notas canceladas depois da venda e devoluções também vão ao OTO.
+- **Prévia e envio de um dia**: quantos registros iriam, sem enviar, e o envio à mão de qualquer dia.
+
+Validada em produção com a carga de 01 a 09/10/2026: 54 envios, 9.519 registros aceitos pelo OTO.
+
+<table>
+  <tr>
+    <td width="50%"><b>OTO CRM</b>: conexão, filiais e histórico dos envios<br><img src="telas/41-oto-crm.jpg" alt="OTO CRM"></td>
+    <td width="50%"><b>Botão "?"</b>: como funciona a integração<br><img src="telas/42-oto-crm-ajuda.jpg" alt="Ajuda do OTO CRM"></td>
   </tr>
 </table>
 
