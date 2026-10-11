@@ -242,8 +242,15 @@ do WINAI:
 - envio do XML da nota fiscal;
 - chaves de acesso guardadas criptografadas e histórico de cada sincronização.
 
-A comunicação com a Magis5 já foi validada de ponta a ponta. A tela de configuração está pronta e as rotinas de
-sincronização estão em desenvolvimento.
+A comunicação com a Magis5 já foi validada de ponta a ponta. A tela de configuração está pronta (menu Integrações,
+ao lado do OTO CRM) e as rotinas de sincronização estão em desenvolvimento.
+
+<table>
+  <tr>
+    <td width="50%"><b>Hub de Integração</b>: situação do servidor, filiais e histórico<br><img src="telas/43-hub-integracao.jpg" alt="Hub de Integração"></td>
+    <td width="50%"><b>Filial no hub</b>: chave da API, modo teste, fluxos e regras<br><img src="telas/44-hub-integracao-filial.jpg" alt="Filial no Hub de Integração"></td>
+  </tr>
+</table>
 
 ---
 
