@@ -38,7 +38,7 @@
 | **Transferências** | Transferência entre filiais, conferência da transferência e do bônus |
 | **Inventário** | Contagem e gestão do inventário |
 | **Metas** | Cadastro e configuração de metas por vendedor, supervisor, gerente e comprador, com relatório de acompanhamento |
-| **Produtos e preços** | Consulta de produtos, política de preço fixo, emissão de etiquetas (impressoras Zebra) com oferta De/Por |
+| **Produtos e preços** | Consulta de produtos, política de preço fixo, emissão de etiquetas (impressoras Zebra ou a impressora do navegador) com oferta De/Por |
 | **Consulta de preço** | Terminais nas lojas com leitor de código de barras, preço por loja e propagandas em tela cheia |
 | **Relatórios** | Vendas e faturamento por filial, supervisor e vendedor; relatório de metas; PIX |
 | **WhatsApp** | Conexão das contas e disparos automáticos de mensagens |
@@ -100,9 +100,18 @@ Configuração por filial, situação do agendador, histórico, ajustes de estoq
 
 ### Etiquetas
 
-Modelos de etiqueta montados em editor visual e impressos em impressoras Zebra, com oferta De/Por.
+Modelos de etiqueta montados em editor visual e impressos em impressoras Zebra, com oferta De/Por. Sem a Zebra, as
+mesmas etiquetas saem na impressora comum pelo navegador, uma página do tamanho do modelo para cada etiqueta, com o
+código de barras de verdade.
 
 ![Etiquetas](telas/20-etiquetas.jpg)
+
+<table>
+  <tr>
+    <td width="50%"><b>Impressora do navegador</b>: destino da impressão na aba F7<br><img src="telas/52-etiquetas-impressao-navegador.jpg" alt="Etiquetas pela impressora do navegador"></td>
+    <td width="50%"><b>Pré-visualização</b>: as etiquetas antes de imprimir<br><img src="telas/53-etiquetas-previa.jpg" alt="Pré-visualização das etiquetas"></td>
+  </tr>
+</table>
 
 ### Consulta de preço nas lojas
 
@@ -231,6 +240,36 @@ Validada em produção com a carga de 01 a 09/10/2026: 54 envios, 9.519 registro
 ---
 
 ## Em elaboração
+
+### Frente de caixa
+
+Caixa no navegador com a mesma lógica da rotina 2075 do Winthor, para o operador que já conhece o PDV:
+
+- **Movimento do caixa e do operador**, suprimento, sangria e fechamento (cego conforme o parâmetro da filial),
+  gravados nas mesmas tabelas da 2075, para o acerto da rotina 410 enxergar o caixa web como os PDVs.
+- **Venda pelas teclas da 2075**: A inicia (cliente e vendedor), leitor de código de barras ou R para consultar,
+  F2 cancela item, F5 cancela a venda, T mostra as teclas.
+- **Fechamento (F1)** pelas finalizadoras da filial: dinheiro com troco, cartão com a bandeira, PIX loja; F salva.
+
+Em andamento: o pedido e o cupom fiscal (NFC-e) no Winthor, o PIX com QR Code e a importação de orçamentos.
+
+<table>
+  <tr>
+    <td width="50%"><b>Venda</b>: descrição, código, cupom e totais<br><img src="telas/46-frente-caixa-venda.jpg" alt="Frente de caixa - venda"></td>
+    <td width="50%"><b>Fechamento (F1)</b>: pagamentos, troco e falta<br><img src="telas/48-frente-caixa-fechamento.jpg" alt="Frente de caixa - fechamento"></td>
+  </tr>
+  <tr>
+    <td><b>Manutenção do caixa</b>: movimento do caixa e do operador<br><img src="telas/45-frente-caixa-manutencao.jpg" alt="Frente de caixa - manutenção"></td>
+    <td><b>Consulta de produto (R)</b>: preço da região e estoque<br><img src="telas/47-frente-caixa-consulta-produto.jpg" alt="Frente de caixa - consulta de produto"></td>
+  </tr>
+  <tr>
+    <td><b>Fechamento cego</b>: valor contado de cada cobrança<br><img src="telas/49-frente-caixa-fechamento-cego.jpg" alt="Frente de caixa - fechamento cego"></td>
+    <td><b>Teclas de acesso (T)</b>: o padrão da 2075<br><img src="telas/50-frente-caixa-teclas.jpg" alt="Frente de caixa - teclas"></td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Configuração do caixa</b>: caixa web na PCCAIXA, série da NFC-e, região e banco da sangria<br><img src="telas/51-configuracao-caixa.jpg" alt="Configuração do caixa"></td>
+  </tr>
+</table>
 
 ### Hub de integração com marketplaces
 
