@@ -272,11 +272,15 @@ e-mail e WhatsApp.
   </tr>
   <tr>
     <td><b>Fechamento cego</b>: valor contado de cada cobrança<br><img src="telas/49-frente-caixa-fechamento-cego.jpg" alt="Frente de caixa - fechamento cego"></td>
-    <td><b>Teclas de acesso (T)</b>: o padrão da 2075<br><img src="telas/50-frente-caixa-teclas.jpg" alt="Frente de caixa - teclas"></td>
+    <td><b>Teclas de acesso (T)</b>: o padrão da 2075; clicar na tecla executa o atalho<br><img src="telas/50-frente-caixa-teclas.jpg" alt="Frente de caixa - teclas"></td>
   </tr>
   <tr>
     <td><b>Pedidos do caixa (P)</b>: pedido de cada venda, reimpressão e cupons cancelados<br><img src="telas/55-frente-caixa-pedidos-turno.jpg" alt="Frente de caixa - pedidos do caixa"></td>
     <td><b>NFC-e da filial</b>: ambiente, CSC, teste da SEFAZ e catálogo de rejeições<br><img src="telas/60-configuracao-caixa-nfce.jpg" alt="NFC-e da filial"></td>
+  </tr>
+  <tr>
+    <td><b>Cancelar cupom (F5)</b>: com o caixa livre, o último cupom, com senha do fiscal e motivo<br><img src="telas/57-frente-caixa-cancelar-cupom.jpg" alt="Frente de caixa - cancelar cupom"></td>
+    <td></td>
   </tr>
   <tr>
     <td><b>DANFE NFC-e</b> (homologação): cupom de 80 mm com QR Code<br><img src="telas/61-danfe-nfce.jpg" alt="DANFE NFC-e" width="260"></td>
