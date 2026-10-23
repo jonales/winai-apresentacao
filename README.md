@@ -246,12 +246,20 @@ Validada em produção com a carga de 01 a 09/10/2026: 54 envios, 9.519 registro
 Caixa no navegador com a mesma lógica da rotina 2075 do Winthor, para o operador que já conhece o PDV:
 
 - **Movimento do caixa e do operador**, suprimento, sangria e fechamento (cego conforme o parâmetro da filial),
-  gravados nas mesmas tabelas da 2075, para o acerto da rotina 410 enxergar o caixa web como os PDVs.
+  gravados nas mesmas tabelas da 2075, para o acerto da rotina 410 enxergar o caixa web como os PDVs. Um movimento por
+  dia, um operador por vez: queda de energia ou aba fechada retomam o turno; o operador reabre o próprio turno no mesmo
+  dia; o que ficar aberto na virada do dia é encerrado sozinho para o acerto na 410.
 - **Venda pelas teclas da 2075**: A inicia (cliente e vendedor), leitor de código de barras ou R para consultar,
   F2 cancela item, F5 cancela a venda, T mostra as teclas.
-- **Fechamento (F1)** pelas finalizadoras da filial: dinheiro com troco, cartão com a bandeira, PIX loja; F salva.
+- **Fechamento (F1)** pelas finalizadoras da filial: dinheiro com troco, cartão com a bandeira, PIX loja; F salva e a
+  venda vira pedido no Winthor.
+- **NFC-e emitida pelo próprio WINAI** (validada na homologação da SEFAZ-GO): mesma montagem do PDV a partir do
+  cadastro do Winthor (tributação, IBS/CBS da reforma), número na série do caixa, DANFE de 80 mm, cancelamento pelo
+  fiscal com motivo (cancela também a venda e o pedido), contingência offline quando a SEFAZ não responde e catálogo
+  das rejeições com a orientação de correção.
 
-Em andamento: o pedido e o cupom fiscal (NFC-e) no Winthor, o PIX com QR Code e a importação de orçamentos.
+Em andamento: piloto da NFC-e em produção, PIX com QR Code no caixa, importação de orçamentos e envio do cupom por
+e-mail e WhatsApp.
 
 <table>
   <tr>
@@ -265,6 +273,14 @@ Em andamento: o pedido e o cupom fiscal (NFC-e) no Winthor, o PIX com QR Code e 
   <tr>
     <td><b>Fechamento cego</b>: valor contado de cada cobrança<br><img src="telas/49-frente-caixa-fechamento-cego.jpg" alt="Frente de caixa - fechamento cego"></td>
     <td><b>Teclas de acesso (T)</b>: o padrão da 2075<br><img src="telas/50-frente-caixa-teclas.jpg" alt="Frente de caixa - teclas"></td>
+  </tr>
+  <tr>
+    <td><b>Pedidos do caixa (P)</b>: pedido de cada venda, reimpressão e cupons cancelados<br><img src="telas/55-frente-caixa-pedidos-turno.jpg" alt="Frente de caixa - pedidos do caixa"></td>
+    <td><b>NFC-e da filial</b>: ambiente, CSC, teste da SEFAZ e catálogo de rejeições<br><img src="telas/60-configuracao-caixa-nfce.jpg" alt="NFC-e da filial"></td>
+  </tr>
+  <tr>
+    <td><b>DANFE NFC-e</b> (homologação): cupom de 80 mm com QR Code<br><img src="telas/61-danfe-nfce.jpg" alt="DANFE NFC-e" width="260"></td>
+    <td><b>DANFE em contingência</b>: emitido sem a SEFAZ e transmitido depois<br><img src="telas/62-danfe-nfce-contingencia.jpg" alt="DANFE NFC-e em contingência" width="260"></td>
   </tr>
   <tr>
     <td colspan="2"><b>Configuração do caixa</b>: caixa web na PCCAIXA, série da NFC-e, região e banco da sangria<br><img src="telas/51-configuracao-caixa.jpg" alt="Configuração do caixa"></td>
