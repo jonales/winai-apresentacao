@@ -24,7 +24,7 @@
 - **Automação**: faturamento de pedidos, ajuste de estoque e avisos por WhatsApp rodam sozinhos, configurados por
   filial.
 - **Seguro**: sessão com expiração por inatividade, acesso por perfil e por rotina, terminais públicos com link
-  próprio e histórico de operações.
+  próprio, histórico de operações, auditoria dos logins e bloqueio de IP.
 
 ---
 
@@ -237,6 +237,25 @@ Validada em produção com a carga de 01 a 09/10/2026: 54 envios, 9.519 registro
   </tr>
 </table>
 
+### Controle de acesso
+
+Quem entra, de onde e quanto cada loja usa o sistema, numa tela só (Auditoria):
+
+- **Tentativas de login** com IP, país e a intenção provável (erro de digitação, usuário inexistente, força bruta,
+  robôs), além dos logins com sucesso.
+- **Bloqueio de IP**: 10 falhas do mesmo IP em 15 minutos bloqueiam o IP por 60 minutos; IPs ou faixas bloqueados ou
+  liberados à mão, com prazo e motivo; rede interna nunca é bloqueada.
+- **Fora do Brasil**: o país vem da lista pública de faixas da LACNIC; primeiro só registra e, depois de conferidos os
+  IPs das lojas, passa a barrar acessos de fora do país.
+- **Uso por loja ou por usuário**: acessos, orçamentos, pedidos e pedidos completos no período, com o valor.
+
+<table>
+  <tr>
+    <td width="50%"><b>Auditoria</b>: uso por loja, tentativas de login e IPs<br><img src="telas/63-auditoria.jpg" alt="Auditoria"></td>
+    <td width="50%"><b>Bloqueio de IP</b>: IP ou faixa bloqueado com prazo e motivo<br><img src="telas/65-auditoria-ip-bloqueado.jpg" alt="Auditoria - IP bloqueado"></td>
+  </tr>
+</table>
+
 ---
 
 ## Em elaboração
@@ -250,10 +269,11 @@ Caixa no navegador com a mesma lógica da rotina 2075 do Winthor, para o operado
   dia, um operador por vez: queda de energia ou aba fechada retomam o turno; o operador reabre o próprio turno no mesmo
   dia; o que ficar aberto na virada do dia é encerrado sozinho para o acerto na 410.
 - **Venda pelas teclas da 2075**: A inicia (cliente e vendedor), leitor de código de barras ou R para consultar,
-  F2 cancela item, F5 cancela a venda, T mostra as teclas.
+  F2 cancela item, F5 cancela a venda (com o caixa livre, o último cupom, pelo fiscal), T mostra as teclas — e clicar na
+  tecla executa o atalho.
 - **Fechamento (F1)** pelas finalizadoras da filial: dinheiro com troco, cartão com a bandeira, PIX loja; F salva e a
   venda vira pedido no Winthor.
-- **NFC-e emitida pelo próprio WINAI** (validada na homologação da SEFAZ-GO): mesma montagem do PDV a partir do
+- **NFC-e emitida pelo próprio WINAI** (validada na homologação em GO e no DF, pela SEFAZ da UF da filial): mesma montagem do PDV a partir do
   cadastro do Winthor (tributação, IBS/CBS da reforma), número na série do caixa, DANFE de 80 mm, cancelamento pelo
   fiscal com motivo (cancela também a venda e o pedido), contingência offline quando a SEFAZ não responde e catálogo
   das rejeições com a orientação de correção.
