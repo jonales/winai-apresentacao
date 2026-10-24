@@ -277,9 +277,11 @@ Caixa no navegador com a mesma lógica da rotina 2075 do Winthor, para o operado
   cadastro do Winthor (tributação, IBS/CBS da reforma), número na série do caixa, DANFE de 80 mm, cancelamento pelo
   fiscal com motivo (cancela também a venda e o pedido), contingência offline quando a SEFAZ não responde e catálogo
   das rejeições com a orientação de correção.
+- **Cupom para o cliente** por e-mail (espelho dos itens e DANFE anexado) ou WhatsApp (link de consulta da NFC-e, com o
+  aceite do cliente), a partir das vendas pagas; servidor de e-mail e modelos das mensagens na tela Configurações, e
+  cada envio fica registrado.
 
-Em andamento: piloto da NFC-e em produção, PIX com QR Code no caixa, importação de orçamentos e envio do cupom por
-e-mail e WhatsApp.
+Em andamento: piloto da NFC-e em produção, PIX com QR Code no caixa e importação de orçamentos.
 
 <table>
   <tr>
@@ -300,7 +302,10 @@ e-mail e WhatsApp.
   </tr>
   <tr>
     <td><b>Cancelar cupom (F5)</b>: com o caixa livre, o último cupom, com senha do fiscal e motivo<br><img src="telas/57-frente-caixa-cancelar-cupom.jpg" alt="Frente de caixa - cancelar cupom"></td>
-    <td></td>
+    <td><b>Enviar o cupom</b>: e-mail ou WhatsApp do cadastro do cliente, com aceite<br><img src="telas/67-caixa-enviar-cupom.jpg" alt="Frente de caixa - enviar o cupom"></td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Configurações</b>: servidor de e-mail, conexão do WhatsApp e modelos das mensagens<br><img src="telas/66-configuracoes-envio-cupom.jpg" alt="Configurações - envio do cupom"></td>
   </tr>
   <tr>
     <td><b>DANFE NFC-e</b> (homologação): cupom de 80 mm com QR Code<br><img src="telas/61-danfe-nfce.jpg" alt="DANFE NFC-e" width="260"></td>
